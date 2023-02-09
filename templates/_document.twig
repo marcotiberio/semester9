@@ -14,7 +14,19 @@
       <div class="pageWrapper">
         <header class="mainHeader">
           {% block header %}
-            {{ renderComponent('NavigationMain') }}
+            <div class="mainHeader-desktop">
+              {{ renderComponent('NavigationMain') }}
+              {{ renderComponent('NavigationArtists') }}
+              <section class="artistAnchorNav boxed">
+                <div class="menu">
+                  <div><a href="#artistBio">bio</a></div>
+                  <div>overview</div>
+                  <div>curriculum</div>
+                  <div>downloads</div>
+                  <div>related exhibitions</div>
+                </div>
+              </section>
+            </div>
             {{ renderComponent('NavigationBurger') }}
           {% endblock %}
         </header>

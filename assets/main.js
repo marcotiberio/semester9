@@ -1,5 +1,6 @@
 import 'vite/modulepreload-polyfill'
 import './scripts/loadCustomElements'
+import Alpine from 'alpinejs'
 import FlyntComponent from './scripts/FlyntComponent'
 
 import 'lazysizes'
@@ -12,6 +13,9 @@ window.customElements.define(
   'flynt-component',
   FlyntComponent
 )
+
+window.Alpine = Alpine
+Alpine.start()
 
 import.meta.glob([
   '../Components/**',

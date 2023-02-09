@@ -71,7 +71,7 @@
 /*
 * Fluid Size Mixin
 */
-@function fluid-size($min-size, $max-size, $min-breakpoint: $breakpoint-tablet, $max-breakpoint: $breakpoint-desktop, $unit: vw) {
+@function fluid-size($min-size, $max-size, $min-breakpoint: $breakpoint-mobile, $max-breakpoint: $breakpoint-tablet, $unit: vw) {
   $min-size: if(unit($min-size) == 'rem', rem-to-px($min-size), $min-size);
   $max-size: if(unit($max-size) == 'rem', rem-to-px($max-size), $max-size);
   $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);

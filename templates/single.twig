@@ -10,11 +10,11 @@
         {{ renderComponent(component) }}
       {% endfor %}
     </section>
-    <footer class="post-meta">
+    {# <footer class="post-meta">
       {{ renderComponent('BlockPostFooter', { post: post }) }}
-    </footer>
+    </footer> #}
     <section class="post-related">
-      {{ renderComponent('GridPostsLatest', {'preContentHtml': '<h2>' ~ __('Related Posts') ~ '</h2>','taxonomies': post.categories(), 'options': {'theme': 'light', 'maxColumns': 3}}) }}
+      {{ renderComponent('ListingEvents', {'preContentHtml': '<h1>' ~ __('Related Exhibitions') ~ '</h1>', 'taxonomies': post.categories()}) }}
     </section>
   </article>
 {% endblock %}
