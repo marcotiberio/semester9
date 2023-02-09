@@ -6,7 +6,6 @@ use Flynt\FieldVariables;
 use Flynt\Utils\Options;
 use Timber\Timber;
 
-
 add_filter('Flynt/addComponentData?name=ListingHomepage', function ($data) {
     $data['posts'] = Timber::get_posts([
         'post_status' => 'publish',
