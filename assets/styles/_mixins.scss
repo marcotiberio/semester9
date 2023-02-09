@@ -1,0 +1,107 @@
+@use 'sass:math';
+@use 'variables';
+
+/**
+ * Shorthands to help writing easier to understand code.
+*/
+
+@mixin font-face(
+  $family,
+  $file,
+  $weight: 'normal',
+  $style: 'normal',
+  $woff2: true,
+  $base-path: '../assets/fonts/'
+) {
+  @font-face {
+    font-display: swap;
+    font-family: $family;
+    font-style: unquote($style);
+    font-weight: unquote($weight);
+    @if $woff2 {
+      src: url($base-path+$file+'.woff2') format('woff2'),
+        url($base-path+$file+'.woff') format('woff');
+    } @else {
+      src: url($base-path+$file+'.woff') format('woff');
+    }
+  }
+}
+
+@mixin reset-list {
+  list-style: none;
+  padding: 0;
+}
+
+@mixin reset-link {
+  text-decoration: none;
+}
+
+@mixin normalize-outline {
+  outline-color: Highlight;
+  outline-color: -webkit-focus-ring-color;
+  outline-offset: 2px;
+  outline-style: dotted;
+  outline-width: 2px;
+}
+
+/**
+* Grid Mixin
+*
+* Applies a flexbox grid (based on css variables) to a container element.
+* All direct children will be modified to create a column based grid.
+*/
+@mixin grid($columns: 1, $alignment: flex-start, $row-gap: var(--flow-space), $column-gap: var(--flow-space) ) {
+  --grid-columns: #{$columns};
+  --grid-alignment: #{$alignment};
+  --grid-row-gap: #{$row-gap};
+  --grid-column-gap: #{$column-gap};
+
+  column-gap: var(--grid-column-gap);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: var(--grid-alignment);
+  row-gap: var(--grid-row-gap);
+  width: 100%;
+
+  > * {
+    width: calc((100% / var(--grid-columns)) - ((var(--grid-columns) - 1) / var(--grid-columns) * var(--grid-column-gap)));
+  }
+}
+
+/*
+* Fluid Size Mixin
+*/
+@function fluid-size($min-size, $max-size, $min-breakpoint: $breakpoint-tablet, $max-breakpoint: $breakpoint-desktop, $unit: vw) {
+  $min-size: if(unit($min-size) == 'rem', rem-to-px($min-size), $min-size);
+  $max-size: if(unit($max-size) == 'rem', rem-to-px($max-size), $max-size);
+  $slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
+  $slope-to-unit: round($slope * 100, 4);
+  $intercept-rem: round(px-to-rem($min-size - $slope * $min-breakpoint), 4);
+  $min-size-rem: round(px-to-rem($min-size), 4);
+  $max-size-rem: round(px-to-rem($max-size), 4);
+  @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
+}
+
+/*
+* Helpers
+*/
+
+@function round($number, $decimals: 0) {
+  $n: 1;
+  @if $decimals > 0 {
+    @for $i from 1 through $decimals {
+      $n: $n * 10;
+    }
+  }
+  @return math.div(math.round($number * $n), $n);
+}
+
+@function px-to-rem($px) {
+  $rem: math.div($px, 16px) * 1rem;
+  @return $rem;
+}
+
+@function rem-to-px($rem) {
+  $px: math.div($rem, 1rem) * 16px;
+  @return $px;
+}

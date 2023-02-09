@@ -1,0 +1,495 @@
+/**
+*  Typography
+*/
+
+@include font-face('Montserrat', 'MontserratRegular', '400', 'normal');
+@include font-face('Montserrat', 'MontserratBold', '700', 'normal');
+
+// body {
+//   padding: var(--spacingLarge);
+// }
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scroll-behavior: smooth;
+}
+
+body,
+.paragraph {
+  color: var(--color-text);
+  font-family: 'Montserrat', Verdana, sans-serif; // FOUC can be reduced with good matching fallback font: https://meowni.ca/font-style-matcher/
+  font-size: var(--bodyFontSize);
+}
+
+#{$heading-selectors} {
+  --flow-space: 2.5rem;
+  font-weight: 700;
+  line-height: calc(1em + 0.5rem);
+}
+
+h1,
+.h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+
+  @media (min-width: $breakpoint-mobile) {
+    font-size: 2.5rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 1.325rem;
+  font-weight: 700;
+
+  @media (min-width: $breakpoint-mobile) {
+    font-size: 1.625rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 1.9375rem;
+
+  @media (min-width: $breakpoint-mobile) {
+    font-size: 2.1875rem;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 1.625rem;
+
+  @media (min-width: $breakpoint-mobile) {
+    font-size: 1.825rem;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 1.375rem;
+
+  @media (min-width: $breakpoint-mobile) {
+    font-size: 1.5rem;
+  }
+}
+
+a {
+  color: var(--color-accent);
+  text-underline-offset: 0.25em;
+}
+
+hr {
+  border: 0;
+  margin: 0 auto;
+
+  &::after {
+    background-color: var(--color-text);
+    content: '';
+    display: block;
+    height: 1px;
+    opacity: 1;
+  }
+}
+
+code {
+  background: var(--color-background-secondary);
+  border-radius: 4px;
+  display: inline-block;
+  font-size: 0.95em;
+  padding: 0 0.375em;
+  word-break: break-word;
+}
+
+figcaption {
+  color: var(--color-text-muted);
+  font-size: var(--bodyFontSizeSmall);
+  margin-block-start: 0.25rem;
+}
+
+blockquote,
+.blockquote {
+  border-inline-start: 5px solid var(--color-accent);
+  display: block;
+  font-size: 1.44rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: calc(1em + 0.75rem);
+  margin: var(--flow-space) 0 var(--flow-space) 2.5rem;
+  max-width: 100%;
+  padding-inline-start: 0.8rem;
+
+  footer {
+    color: var(--color-text-muted);
+    font-size: var(--bodyFontSize);
+    margin-block-start: 0.25rem;
+  }
+}
+
+/**
+* Lists & Tables
+*/
+
+ul,
+ol {
+  padding-inline-start: 1.5rem;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: var(--color-text);
+  font-size: var(--bodyFontSizeSmall);
+  max-width: 100%;
+  width: 100%;
+
+  caption {
+    caption-side: bottom;
+    color: var(--color-text-muted);
+    margin-block-start: calc(var(--flow-space) / 2);
+    text-align: start;
+  }
+
+  td,
+  th {
+    padding: 0.9rem 1rem;
+    text-align: inherit;
+    vertical-align: top;
+  }
+
+  th {
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  thead {
+    background-color: var(--color-background-secondary);
+    border-block-end: solid 2px var(--color-border);
+  }
+
+  tr {
+    &:nth-child(even) {
+      background-color: var(--color-background-secondary);
+    }
+  }
+}
+
+/**
+* Buttons
+*/
+
+.button {
+  @include reset-link;
+  appearance: none;
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: var(--spacingSmall);
+  text-align: center;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: var(--spacingSmall) var(--spacingLarge);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &--full {
+    background-color: var(--black);
+    border: 1px solid var(--black);
+    color: var(--white);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: var(--black);
+    }
+  }
+
+  &--ghost {
+    background-color: transparent;
+    border: 1px solid var(--black);
+    color: var(--black);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background-color: var(--black);
+      color: var(--white);
+    }
+  }
+
+  &--text {
+    background-color: transparent;
+    border: 0;
+    color: var(--black);
+    padding: 0;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+/**
+* Forms
+*/
+
+form {
+  margin: 0;
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+}
+
+legend {
+  color: var(--color-text);
+  font-size: var(--bodyFontSize);
+  font-weight: 700;
+  padding: 0;
+}
+
+label {
+  color: var(--color-text-muted);
+  font-size: var(--bodyFontSizeSmall);
+  font-weight: 500;
+}
+
+#{$input-selectors} {
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--color-border-secondary);
+  border-radius: 0;
+  caret-color: var(--color-text);
+  color: var(--color-text);
+  font-size: var(--bodyFontSizeSmall);
+  max-width: 100%;
+  padding: 0.7rem 0.6rem;
+  transition: border-color 0.3s ease-in-out;
+  width: 300px;
+
+  &::placeholder {
+    color: var(--color-border-secondary);
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:invalid {
+    border-color: var(--color-error);
+  }
+}
+
+.select {
+  --icon-size: 17px;
+  --icon-border-width: 2px;
+  display: inline-block;
+  position: relative;
+
+  &::after {
+    border-block-end: var(--icon-border-width) solid currentColor;
+    border-inline-end: var(--icon-border-width) solid currentColor;
+    content: '';
+    display: block;
+    height: var(--icon-size);
+    inset-block-start: calc(50% - var(--icon-border-width));
+    inset-inline-end: calc(0.6rem + (var(--icon-border-width) * 2));
+    pointer-events: none;
+    position: absolute;
+    transform: translateY(calc(-50% - var(--icon-border-width))) rotate(45deg);
+    width: var(--icon-size);
+  }
+
+  select {
+    padding-inline-end: calc(var(--icon-size) + 1.5em);
+  }
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+  vertical-align: top;
+  width: 100%;
+}
+
+[type='checkbox'],
+[type='radio'] {
+  accent-color: var(--color-accent);
+  display: inline-block;
+  height: 20px;
+  margin-block-start: 4px;
+  margin-inline-end: 8px;
+  vertical-align: top;
+  width: 20px;
+
+  + label {
+    color: var(--color-text);
+    display: inline-block;
+    font: inherit;
+    width: calc(100% - 33px);
+  }
+}
+
+/**
+* Helpers
+*/
+
+flynt-component {
+  display: block;
+  position: relative;
+}
+
+/* Base flow for content */
+:where(#{$heading-selectors}, p, .paragraph, ul, ol, pre, table, figure, blockquote, form, fieldset, dl, address, details, hr, aside, video, fieldset) {
+  + * {
+    margin-block-start: var(--spacingSmall);
+  }
+}
+
+.mainHeader {
+  &-desktop {
+    display: flex;
+    flex-flow: column;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+}
+
+.mainContent {
+  @media (min-width: $breakpoint-tablet) {
+    margin-top: 276px;
+    min-height: calc(100vh - 320px);
+  }
+}
+
+.pageWrapper {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto;
+
+  .admin-bar & {
+    padding-block-start: var(--wp-admin--admin-bar--height);
+  }
+}
+
+.componentSpacing {
+  margin: var(--component-spacing) 0;
+
+  &[data-theme] {
+    margin: 0;
+    padding: var(--component-spacing) 0;
+  }
+
+  /* Use flow-space as componentSpacing for all components in single post layouts. */
+  .post-main & {
+    --component-spacing: var(--flow-space);
+  }
+}
+
+.boxed {
+  margin-inline: auto;
+  max-width: var(--containerMaxWidth);
+  padding: var(--spacingSmall);
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: var(--spacingLarge);
+  }
+}
+
+.contentMaxWidth {
+  margin-inline: auto;
+  max-width: var(--contentMaxWidth);
+  padding: var(--spacingLarge);
+}
+
+.flowContent {
+  > * + * {
+    margin-block-start: var(--flow-space);
+  }
+}
+
+.preContent {
+  margin: 0 0 var(--spacingSmall);
+  max-width: var(--contentMaxWidth);
+  text-align: left;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: 0 0 var(--spacingLarge);
+  }
+}
+
+.postContent {
+  margin: var(--spacingSmall) 0 0;
+  max-width: var(--contentMaxWidth);
+  text-align: left;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: var(--spacingLarge) 0 0;
+  }
+}
+
+.scrollableTableWrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
+
+/* Class for text that should only be visible to screen readers */
+.visuallyHidden {
+  clip: rect(0, 0, 0, 0) !important;
+  height: 1px !important;
+  margin: -1px !important; // Fix for https://github.com/twbs/bootstrap/issues/25686
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
+/* Skip link behavior */
+.skipLink {
+  inset-block-start: -100px;
+  position: fixed;
+  z-index: 999;
+
+  &:focus {
+    inset-block-start: 0;
+  }
+}
+
+/**
+* Box Helpers
+*/
+
+.boxPadding {
+  padding: var(--box-padding);
+}
+
+.boxBorder {
+  border: solid 2px var(--color-border);
+}
+
+/**
+* Themes
+*/
+
+[data-theme] {
+  background-color: var(--color-background);
+  color: var(--color-text);
+}

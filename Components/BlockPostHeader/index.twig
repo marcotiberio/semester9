@@ -1,0 +1,42 @@
+<flynt-component client:visible name="BlockPostHeader">
+  <div class="container boxed">
+    {% if post.thumbnail %}
+      <div class="featuredImage">
+        <img class="figure-image lazyload"
+          src="{{ post.thumbnail.src }}"
+          data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+          data-sizes="auto">
+      </div>
+    {% endif %}
+    <div class="bioSection" id="artistBio">
+      <div class="left">
+      <img class="figure-image lazyload"
+        src="{{ post.artistPic.src }}"
+        data-srcset="{{function('wp_get_attachment_image_srcset', post.artistPic.id)}}"
+        data-sizes="auto">
+      </div>
+      <div class="right">
+        <h1>{{ post.title }}</h1>
+        <div>{{ post.artistBio|wpautop }}</div>
+      </div>
+    </div>
+    {# {% if post.post_excerpt %}
+      <p class="h5">{{ post.post_excerpt }}</p>
+    {% endif %} #}
+    {# <div class="meta">
+      <a class="author" href="{{ post.author.link|e('esc_url') }}">
+        {% if post.author.avatar %}
+          <img class="avatar" src="{{ post.author.avatar }}" alt="{{ post.author.name|e }}">
+        {% endif %}
+        <span class="visuallyHidden">{{ labels.postedBy|e }}</span>
+        {{ post.author.name }}
+      </a>
+      <a class="category" href="{{ post.category.link|e('esc_url') }}">
+        <span class="visuallyHidden">{{ labels.postedIn|e }}</span>
+        {{ post.category }}
+      </a>
+      <time class="date" datetime="{{ post.post_date|date('c') }}">{{ post.post_date|date(dateFormat) }}</time>
+      <span class="readingtime">{{ labels.readingTime|replace({'%d': post.content|readingtime})|e }}</span>
+    </div> #}
+  </div>
+</flynt-component>

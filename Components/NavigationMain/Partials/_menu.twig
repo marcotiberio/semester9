@@ -1,0 +1,27 @@
+<ul class="menu">
+  {% for item in items %}
+    {# regular menu item #}
+    {% if not item.children %}
+      <li class="item {{- item.current ? ' current-menu-item' }}">
+        <a class="link text-red-500" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+          {{ item.title }}
+        </a>
+      </li>
+    {% endif %}
+    {# menu with submenu item #}
+    {% if item.children %}
+      <li class="item open-submenu {{- item.current ? ' current-menu-item' }}" >
+        <a class="link" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+          {{ item.title }}
+        </a>
+        <ul class="menu submenu">
+          {% for subitem in item.children %}
+            <li class="item {{- item.current ? ' current-menu-item' }}">
+              <a class="link" href="{{ subitem.link }}">{{ subitem.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>

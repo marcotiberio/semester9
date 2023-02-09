@@ -1,0 +1,34 @@
+<flynt-component client:visible name="BlockGallery" class="boxed" id="artistOverview">
+  {% if preContent %}
+    <div class="preContent h1">
+      {{ preContent }}
+    </div>
+  {% endif %}
+  <div class="container">
+    {% for box in boxes %}
+      <div class="box" id="box-{{ loop.index }}">
+        <div x-data="{ showDropdown: false }" class="box-inner box-inner--image box-front">
+          <img
+            x-on:mouseover="showDropdown = true"
+            x-on:mouseleave="showDropdown = false"
+            x-on:click="showDropdown = !showDropdown"
+            class="figure-image lazyload"
+            src="{{ box.image.src }}"
+            data-srcset="{{function('wp_get_attachment_image_srcset', box.image.id)}}"
+            data-sizes="auto">
+          {% if box.contentHtml %}
+            <div
+              x-cloak
+              x-show="showDropdown"
+              x-on:mouseover="showDropdown = true"
+              x-on:mouseleave="showDropdown = false"
+              class="box-inner--content">
+              <div>{{ box.title }}</div>
+              <div>{{ box.contentHtml|e('wp_kses_post') }}</div>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</flynt-component>

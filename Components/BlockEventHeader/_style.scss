@@ -1,0 +1,15 @@
+flynt-component[name='BlockEventHeader'] {
+  .container {
+    padding: 0 var(--spacingLarge);
+  }
+
+  .featuredImage {
+    padding-bottom: var(--spacingLarge);
+    width: 100%;
+
+    img {
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+flynt-component[name='BlockPostHeader'] {
+  .container {
+    @media (min-width: $breakpoint-tablet) {
+      padding: 0 var(--spacingLarge);
+    }
+  }
+
+  .featuredImage {
+    border-bottom: 1px solid var(--black);
+    padding-bottom: var(--spacingSmall);
+    width: 100%;
+
+    @media (min-width: $breakpoint-tablet) {
+      padding-bottom: var(--spacingLarge);
+    }
+  }
+
+  .bioSection {
+    border-bottom: 1px solid var(--black);
+    display: flex;
+    flex-flow: row wrap;
+    gap: var(--spacingSmall);
+    padding: var(--spacingSmall) 0;
+
+    @media (min-width: $breakpoint-tablet) {
+      gap: var(--spacingLarge);
+      padding: var(--spacingLarge) 0;
+    }
+
+    .left {
+      flex-grow: 1;
+
+      @media (min-width: $breakpoint-tablet) {
+        width: calc(33% - var(--spacingLarge));
+      }
+    }
+
+    .right {
+      flex-grow: 1;
+
+      @media (min-width: $breakpoint-tablet) {
+        width: calc(33% - var(--spacingLarge));
+      }
+    }
+  }
+}
