@@ -19,16 +19,15 @@ flynt-component[name='NavigationBurger'] {
   //   }
   // }
 
-  &[data-status='menuIsOpen'] {
-    .container {
-      box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.07);
-    }
-  }
+  // &[data-status='menuIsOpen'] {
+  //   .container {
+  //     box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.07);
+  //   }
+  // }
 
   .container {
     align-items: center;
     background-color: var(--color-background);
-    border-block-end: solid 2px var(--color-border);
     display: flex;
     height: var(--navigation-height);
     inset-block-start: 0;
@@ -38,6 +37,10 @@ flynt-component[name='NavigationBurger'] {
     position: fixed;
     width: 100%;
     z-index: 99;
+
+    .left {
+      width: 48px;
+    }
 
     .admin-bar & {
       inset-block-start: var(--wp-admin--admin-bar--height);

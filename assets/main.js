@@ -1,6 +1,10 @@
 import 'vite/modulepreload-polyfill'
 import './scripts/loadCustomElements'
+import './scripts/custom'
 import Alpine from 'alpinejs'
+import intersect from '@alpinejs/intersect'
+ 
+Alpine.plugin(intersect)
 import FlyntComponent from './scripts/FlyntComponent'
 
 import 'lazysizes'
@@ -16,6 +20,7 @@ window.customElements.define(
 
 window.Alpine = Alpine
 Alpine.start()
+Alpine.plugin(intersect)
 
 import.meta.glob([
   '../Components/**',

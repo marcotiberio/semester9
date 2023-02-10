@@ -1,6 +1,7 @@
 <flynt-component client:idle client:media="(max-width: 1023px)" name="NavigationBurger">
   <nav aria-label="{{ labels.ariaLabel|e }}">
     <div class="container boxed">
+      <div class="left"></div>
       {% include 'Partials/_logo.twig' with { 'logo': logo, 'site': site } only %}
       {% if menu %}
         {% include 'Partials/_hamburger.twig' with { 'labels': labels } only %}

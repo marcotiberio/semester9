@@ -1,8 +1,10 @@
 .menu {
   @include reset-list;
   align-items: center;
+  border-bottom: 1px solid var(--black);
   display: flex;
   justify-content: space-between;
+  padding-bottom: var(--spacingLarge);
   width: 100%;
 
   .link {

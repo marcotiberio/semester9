@@ -1,0 +1,44 @@
+.page-agenda {
+  @media (min-width: $breakpoint-tablet) {
+    flynt-component[name='NavigationAgenda'] {
+      display: block;
+    }
+  }
+}
+
+.page-artists {
+  @media (min-width: $breakpoint-tablet) {
+    flynt-component[name='NavigationArtists'] {
+      display: block;
+
+      .container {
+        padding-bottom: 0;
+      }
+
+      .menu {
+        border-bottom: 1px solid var(--black);
+        padding-bottom: var(--spacingLarge);
+      }
+    }
+    
+    flynt-component[name='NavigationArtistsAnchor'] {
+      display: none;
+    }
+  }
+}
+
+.single-post {
+  @media (min-width: $breakpoint-tablet) {
+    flynt-component[name='NavigationArtists'] {
+      display: block;
+    }
+    
+    flynt-component[name='NavigationArtistsAnchor'] {
+      display: block;
+    }
+
+    flynt-component[name='ListingEvents'] {
+      scroll-margin-top: 100px;
+    }
+  }
+}

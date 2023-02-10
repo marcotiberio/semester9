@@ -1,23 +1,4 @@
 /* Custom styling for artist posts */
 
 .single-post {
-  .artistAnchorNav {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    padding-top: 0;
-    position: sticky;
-    top: 0;
-    width: 100%;
-
-    .menu {
-      background: var(--white);
-      border-bottom: 1px solid var(--black);
-      border-top: 1px solid var(--black);
-      align-items: center;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      padding: var(--spacingSmall) 0;
-    }
-  }
 }

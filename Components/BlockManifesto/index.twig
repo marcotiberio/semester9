@@ -1,0 +1,32 @@
+<flynt-component client:visible name="BlockManifesto" class="boxed">
+  <div class="container">
+    <div class="content">
+      <div class="grid">
+        {% for panel in accordionPanels %}
+          <div x-data="{ isOpen: false }" class="panel">
+            <button @click="isOpen = true
+                    $nextTick(() => $refs.modalCloseButton.focus())
+                    "   class="panel-trigger" type="button" aria-expanded="false" aria-controls="content-{{ loop.index }}">
+              {{ panel.panelTitle|e }}
+            </button>
+            <div x-show="isOpen" class="panel-content" aria-hidden="true" id="content-{{ loop.index }}">
+              <div class="panel-inner">
+                <div class="title">
+                  <h2>{{ panel.panelTitle|e }}</h2>
+                  <div class="close" @click="isOpen = false"
+                    x-ref="modalCloseButton">
+                    <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <line x1="0.71199" y1="1.30241" x2="22.7172" y2="23.3076" stroke="white" stroke-width="2"/>
+                      <line x1="1.29778" y1="23.298" x2="23.303" y2="1.29281" stroke="white" stroke-width="2"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="text">{{ panel.panelContent|e('wp_kses_post') }}</div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>

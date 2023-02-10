@@ -369,13 +369,53 @@ flynt-component {
     top: 0;
     width: 100%;
     z-index: 1000;
+
+    &.headroom {
+      .navigation {
+        transition: transform 0.3s;
+        will-change: transform;
+      }
+  
+      &--unpinned {
+        .navigation {
+          transform: translateY(-221px);
+        }
+      }
+    }
   }
 }
 
+
+
 .mainContent {
+  min-height: calc(100vh - 200px);
+
   @media (min-width: $breakpoint-tablet) {
-    margin-top: 276px;
+    margin-top: 126px;
     min-height: calc(100vh - 320px);
+  }
+}
+
+.page-artists,
+.page-agenda {
+  .mainContent {
+    min-height: calc(100vh - 200px);
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-top: 216px;
+      min-height: calc(100vh - 320px);
+    }
+  }
+}
+
+.single-post {
+  .mainContent {
+    min-height: calc(100vh - 200px);
+    
+    @media (min-width: $breakpoint-tablet) {
+      margin-top: 316px;
+      min-height: calc(100vh - 320px);
+    }
   }
 }
 

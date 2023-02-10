@@ -1,0 +1,19 @@
+flynt-component[name='BlockImageLink'] {
+  .container {
+    column-count: 2;
+    gap: var(--spacingSmall);
+
+    @media (min-width: $breakpoint-mobile) {
+      column-count: 3;
+      gap: var(--spacingLarge);
+    }
+  }
+
+  .box {
+    display: block;
+
+    @media (min-width: $breakpoint-mobile) {
+      margin-bottom: var(--spacingLarge);
+    }
+  }
+}

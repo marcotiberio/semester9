@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="html {{ body_class }}" {{ site.language_attributes }}>
+<html class="html {{ body_class }} page-{{ post.slug }}" id="theTop" lang="{{ site.language }}" {{ site.language_attributes }}>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,20 +12,13 @@
     </a>
     {% block layout %}
       <div class="pageWrapper">
-        <header class="mainHeader">
+        <header>
           {% block header %}
             <div class="mainHeader-desktop">
               {{ renderComponent('NavigationMain') }}
+              {{ renderComponent('NavigationAgenda') }}
               {{ renderComponent('NavigationArtists') }}
-              <section class="artistAnchorNav boxed">
-                <div class="menu">
-                  <div><a href="#artistBio">bio</a></div>
-                  <div>overview</div>
-                  <div>curriculum</div>
-                  <div>downloads</div>
-                  <div>related exhibitions</div>
-                </div>
-              </section>
+              {{ renderComponent('NavigationArtistsAnchor') }}
             </div>
             {{ renderComponent('NavigationBurger') }}
           {% endblock %}
