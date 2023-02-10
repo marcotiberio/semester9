@@ -42,8 +42,8 @@ flynt-component[name='BlockManifesto'] {
       z-index: 2;
 
       &::before {
-        counter-increment: section;
         content: counter(section);
+        counter-increment: section;
         font-size: 2.5rem;
       }
     }
@@ -59,10 +59,10 @@ flynt-component[name='BlockManifesto'] {
       margin: 0 auto;
       padding: var(--spacingSmall) var(--spacingLarge);
       position: fixed;
-      transition: all 0.3s ease-in-out;
-      z-index: 1000;
-      width: 100%;
       top: 0;
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+      z-index: 1000;
       
     }
 
@@ -85,8 +85,8 @@ flynt-component[name='BlockManifesto'] {
         text-align: center;
 
         &::before {
-          counter-increment: section;
           content: counter(section);
+          counter-increment: section;
           font-size: 2.5rem;
           font-weight: 800;
         }

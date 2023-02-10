@@ -3,10 +3,7 @@ import './scripts/loadCustomElements'
 import './scripts/custom'
 import Alpine from 'alpinejs'
 import intersect from '@alpinejs/intersect'
- 
-Alpine.plugin(intersect)
 import FlyntComponent from './scripts/FlyntComponent'
-
 import 'lazysizes'
 
 if (import.meta.env.DEV) {
