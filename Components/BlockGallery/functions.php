@@ -30,7 +30,6 @@ function getACFLayout()
                 'min' => 1,
                 'button_label' => __('Add Box', 'flynt'),
                 'sub_fields' => [
-                    
                     [
                         'label' => __('Image', 'flynt'),
                         'name' => 'image',

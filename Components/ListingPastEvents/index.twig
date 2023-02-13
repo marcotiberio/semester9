@@ -1,0 +1,42 @@
+{% if posts|length > 0 %}
+  <flynt-component client:visible name="ListingPastEvents" class="" id="relatedExhibitions">
+    <div class="container boxed">
+      {% if preContentHtml %}
+        <div class="preContent h1">
+          {{ preContentHtml }}
+        </div>
+      {% endif %}
+      <div class="grid">
+        {% for post in posts %}
+          <div class="post" data-theme="reset">
+            {% if post.thumbnail %}
+              <figure class="figure">
+                <img class="lazyload"
+                  src="{{ post.thumbnail.src }}"
+                  data-srcset="{{function('wp_get_attachment_image_srcset', post.thumbnail.id)}}"
+                  data-sizes="auto"
+                  alt="{{ post.title }}">
+              </figure>
+            {% endif %}
+            <div class="content">
+              <h2 class="h5">{{ post.title }}</h2>
+              {% if post.eventDate or post.eventTime %}
+                <span>{{ post.eventDate|date("d.m.Y")|escape('wp_kses_post') }}</span>
+                <span> - {{ post.eventTime }}</span>
+              {% endif %}
+              <p>{{ post.eventIntro }}</p>
+              <a class="button button--full" href="{{ post.link }}" aria-label="{{ post.title }}">Read more</a>
+            </div>
+            {# <footer class="footer">
+              <span class="button button--text">{{ labels.readMore }}</span>
+            </footer> #}
+          </div>
+        {% endfor %}
+        {# <img src="/wp-content/themes/semester9next/assets/images/SEMESTER9_logotype.svg"> #}
+      </div>
+      {# <div class="postContent">
+        <a href="{{ postTypeArchiveLink }}" class="button button--text">{{ labels.allPosts }}</a>
+      </div> #}
+    </div>
+  </flynt-component>
+{% endif %}

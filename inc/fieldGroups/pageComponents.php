@@ -17,6 +17,7 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'layouts' => [
                     Components\BlockAnchor\getACFLayout(),
                     Components\BlockCollapse\getACFLayout(),
+                    Components\BlockDivider\getACFLayout(),
                     Components\BlockImage\getACFLayout(),
                     Components\BlockImageLink\getACFLayout(),
                     Components\BlockImageText\getACFLayout(),
@@ -28,6 +29,8 @@ add_action('Flynt/afterRegisterComponents', function () {
                     Components\GridImageText\getACFLayout(),
                     Components\GridPostsLatest\getACFLayout(),
                     Components\ListingEvents\getACFLayout(),
+                    Components\ListingPastEvents\getACFLayout(),
+                    Components\ListingUpcomingEvents\getACFLayout(),
                     Components\ListingHomepage\getACFLayout(),
                     Components\ListComponents\getACFLayout(),
                     Components\SliderImages\getACFLayout(),
