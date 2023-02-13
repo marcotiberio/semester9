@@ -21,6 +21,7 @@ flynt-component[name='BlockPostHeader'] {
     flex-flow: row wrap;
     gap: var(--spacingSmall);
     padding: var(--spacingSmall) 0;
+    scroll-margin-top: 316px;
 
     @media (min-width: $breakpoint-tablet) {
       gap: var(--spacingLarge);

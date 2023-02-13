@@ -24,7 +24,10 @@
               x-on:mouseleave="showDropdown = false"
               class="box-inner--content">
               <div>{{ box.title }}</div>
-              <div>{{ box.contentHtml|e('wp_kses_post') }}</div>
+              <div>
+                {{ box.contentHtml|e('wp_kses_post') }}
+                <a href="mailto:pimlamme1@gmail.com" target="_blank" class="button button--full">Request Info</a>
+              </div>
             </div>
           {% endif %}
         </div>

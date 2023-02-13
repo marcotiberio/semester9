@@ -8,7 +8,7 @@
   inset-block-start: var(--navigation-height);
   inset-inline-start: 0;
   justify-content: space-between;
-  margin-top: 1px;
+  margin-top: 0;
   min-height: calc(100% - var(--navigation-height));
   overflow-y: scroll;
   padding: var(--component-spacing) var(--container-padding);

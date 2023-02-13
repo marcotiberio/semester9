@@ -1,25 +1,11 @@
 flynt-component[name='NavigationMain'] {
-  // --navigation-height: 96px;
   display: none;
   font-size: var(--bodyFontSizeSmall);
-  // height: var(--navigation-height);
+  position: relative;
 
   @media (min-width: $breakpoint-tablet) {
     display: block;
   }
-
-  // &.headroom {
-  //   .navigation {
-  //     transition: transform 0.3s;
-  //     will-change: transform;
-  //   }
-
-  //   &--unpinned {
-  //     .navigation {
-  //       transform: translate3d(0, -100%, 0);
-  //     }
-  //   }
-  // }
 
   .navigation {
     background-color: var(--color-background);

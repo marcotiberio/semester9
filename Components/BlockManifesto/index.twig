@@ -3,16 +3,17 @@
     <div class="content">
       <div class="grid">
         {% for panel in accordionPanels %}
-          <div x-data="{ isOpen: false }" class="panel">
+          <div x-cloak x-data="{ isOpen: false }" class="panel">
             <button @click="isOpen = true
                     $nextTick(() => $refs.modalCloseButton.focus())
                     "   class="panel-trigger" type="button" aria-expanded="false" aria-controls="content-{{ loop.index }}">
+              <h1>{{ panel.panelN|e }}</h1>
               {{ panel.panelTitle|e }}
             </button>
             <div x-show="isOpen" class="panel-content" aria-hidden="true" id="content-{{ loop.index }}">
               <div class="panel-inner">
                 <div class="title">
-                  <h2>{{ panel.panelTitle|e }}</h2>
+                  <span class="h1">{{ panel.panelN|e }}</span><span class="h2">{{ panel.panelTitle|e }}</span>
                   <div class="close" @click="isOpen = false"
                     x-ref="modalCloseButton">
                     <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">

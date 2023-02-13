@@ -26,12 +26,17 @@ function getACFLayout()
                 'button_label' => __('Add Accordion Panel', 'flynt'),
                 'sub_fields' => [
                     [
-                        'label' => __('Panel Title', 'flynt'),
+                        'label' => __('N.', 'flynt'),
+                        'name' => 'panelN',
+                        'type' => 'text'
+                    ],
+                    [
+                        'label' => __('Title', 'flynt'),
                         'name' => 'panelTitle',
                         'type' => 'text'
                     ],
                     [
-                        'label' => __('Panel Content', 'flynt'),
+                        'label' => __('Content', 'flynt'),
                         'name' => 'panelContent',
                         'type' => 'wysiwyg',
                         'tabs' => 'visual,text',

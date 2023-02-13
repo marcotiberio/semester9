@@ -1,5 +1,5 @@
-<flynt-component client:visible name="BlockImageText" class="componentSpacing" {{ options.theme ? 'data-theme="' ~ options.theme ~ '"' }}>
-  <div class="container centerMaxWidthContainer" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
+<flynt-component client:visible name="BlockImageText">
+  <div class="container boxed" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
     <figure class="figure centerContentMaxWidth">
       {% if image.post_mime_type == 'image/svg+xml'%}
         <img class="image lazyload"

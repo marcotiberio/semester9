@@ -8,7 +8,7 @@ function getACFLayout()
 {
     return [
         'name' => 'AccordionDefault',
-        'label' => 'Accordion: Default',
+        'label' => 'Block: Curriculum',
         'sub_fields' => [
             [
                 'label' => __('General', 'flynt'),

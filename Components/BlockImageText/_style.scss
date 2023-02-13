@@ -1,9 +1,9 @@
 flynt-component[name='BlockImageText'] {
   .container {
     @media (min-width: $breakpoint-tablet) {
-      align-items: center;
+      align-items: flex-start;
       display: flex;
-      gap: calc(var(--container-padding) * 2);
+      gap: var(--spacingLarge);
       justify-content: space-around;
     }
 

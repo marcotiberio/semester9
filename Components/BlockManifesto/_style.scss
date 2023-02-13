@@ -28,7 +28,7 @@ flynt-component[name='BlockManifesto'] {
     border: 1px solid var(--black);
 
     &-trigger {
-      align-items: center;
+      align-items: flex-start;
       cursor: pointer;
       display: flex;
       font-weight: 800;
@@ -41,10 +41,14 @@ flynt-component[name='BlockManifesto'] {
       width: 100%;
       z-index: 2;
 
-      &::before {
-        content: counter(section);
-        counter-increment: section;
-        font-size: 2.5rem;
+      &:hover,
+      &:focus {
+        background: var(--black);
+        color: var(--white);
+      }
+
+      h1 {
+        line-height: 0.9;
       }
     }
 
@@ -73,27 +77,30 @@ flynt-component[name='BlockManifesto'] {
       width: 90%;
 
       @media (min-width: $breakpoint-tablet) {
+        padding: var(--spacingSmall) var(--spacingLarge);
         width: 40%;
       }
 
       .title {
-        align-items: center;
+        align-items: flex-start;
         display: flex;
         flex-flow: row;
         gap: var(--spacingSmall);
         justify-content: space-between;
-        text-align: center;
+        text-align: left;
 
-        &::before {
-          content: counter(section);
-          counter-increment: section;
-          font-size: 2.5rem;
-          font-weight: 800;
+        * {
+          margin-block-start: 0;
+        }
+
+        .h2 {
+          @media (min-width: $breakpoint-tablet) {
+            width: 75%;
+          }
         }
 
         .close {
           cursor: pointer;
-          margin-block-start: 0;
         }
 
         svg {
@@ -106,7 +113,7 @@ flynt-component[name='BlockManifesto'] {
 
         @media (min-width: $breakpoint-tablet) {
           margin: var(--spacingLarge) auto;
-          width: 66%;
+          width: 75%;
         }
       }
     }

@@ -12,11 +12,13 @@
     </a>
     {% block layout %}
       <div class="pageWrapper">
+        {% if fn('is_front_page') %}
+          {{ renderComponent('BlockAnnouncement') }}
+        {% endif %}
         <header>
           {% block header %}
             <div class="mainHeader-desktop">
               {{ renderComponent('NavigationMain') }}
-              {{ renderComponent('NavigationAgenda') }}
               {{ renderComponent('NavigationArtists') }}
               {{ renderComponent('NavigationArtistsAnchor') }}
             </div>

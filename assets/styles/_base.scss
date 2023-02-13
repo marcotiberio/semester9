@@ -353,6 +353,10 @@ flynt-component {
   position: relative;
 }
 
+[x-cloak] { 
+  display: none !important; 
+}
+
 /* Base flow for content */
 :where(#{$heading-selectors}, p, .paragraph, ul, ol, pre, table, figure, blockquote, form, fieldset, dl, address, details, hr, aside, video, fieldset) {
   + * {
@@ -371,15 +375,11 @@ flynt-component {
     z-index: 1000;
 
     &.headroom {
-      .navigation {
-        transition: transform 0.3s;
-        will-change: transform;
-      }
-  
+      transition: transform 0.3s;
+      will-change: transform;
+
       &--unpinned {
-        .navigation {
-          transform: translateY(-221px);
-        }
+        transform: translateY(-221px);
       }
     }
   }

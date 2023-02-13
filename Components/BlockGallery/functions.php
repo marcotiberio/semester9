@@ -30,15 +30,7 @@ function getACFLayout()
                 'min' => 1,
                 'button_label' => __('Add Box', 'flynt'),
                 'sub_fields' => [
-                    // [
-                    //     'label' => __('Link', 'flynt'),
-                    //     'name' => 'blockLink',
-                    //     'type' => 'link',
-                    //     'return_format' => 'array',
-                    //     'wrapper' =>  [
-                    //         'width' => '30',
-                    //     ]
-                    // ],
+                    
                     [
                         'label' => __('Image', 'flynt'),
                         'name' => 'image',

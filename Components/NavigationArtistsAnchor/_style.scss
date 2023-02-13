@@ -1,23 +1,11 @@
 flynt-component[name='NavigationArtistsAnchor'] {
   display: none;
   font-size: var(--bodyFontSizeSmall);
+  position: relative;
 
   @media (min-width: $breakpoint-tablet) {
     display: none;
   }
-
-  // &.headroom {
-  //   .navigation {
-  //     transition: transform 0.3s;
-  //     will-change: transform;
-  //   }
-
-  //   &--unpinned {
-  //     .navigation {
-  //       transform: translate3d(0, -100%, 0);
-  //     }
-  //   }
-  // }
 
   .navigation {
     background-color: var(--color-background);
