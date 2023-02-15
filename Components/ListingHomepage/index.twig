@@ -1,6 +1,6 @@
 {% if posts|length > 0 %}
   <flynt-component client:visible name="ListingHomepage" class="">
-    <div class="container boxed">
+    <div class="boxed">
       {% if preContentHtml %}
         <div class="preContent">
           {{ preContentHtml|e('wp_kses_post') }}

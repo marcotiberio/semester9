@@ -24,7 +24,7 @@ add_filter('Flynt/addComponentData?name=ListingUpcomingEvents', function ($data)
         'ignore_sticky_posts' => 1,
         'posts_per_page' => -1,
         'orderby' => 'meta_value',
-        'order' => 'ASC',
+        'order' => 'DESC',
         'meta_query' => array(
             array(
                 'key' => 'eventDate',

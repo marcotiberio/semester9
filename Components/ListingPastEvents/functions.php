@@ -25,7 +25,7 @@ add_filter('Flynt/addComponentData?name=ListingPastEvents', function ($data) {
         'posts_per_page' => -1,
         'meta_key' => 'eventDate',
         'orderby' => 'meta_value',
-        'order' => 'ASC',
+        'order' => 'DESC',
         'meta_query' => array(
             array(
                 'key' => 'eventDate',

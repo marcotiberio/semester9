@@ -33,6 +33,7 @@
 }
 
 @mixin reset-link {
+  color: var(--black);
   text-decoration: none;
 }
 

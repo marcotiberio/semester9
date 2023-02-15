@@ -1,7 +1,7 @@
 flynt-component[name='NavigationFooter'] {
   font-size: var(--bodyFontSizeSmall);
 
-  .container {
+  .wrapper {
     text-align: center;
 
     @media (min-width: $breakpoint-tablet) {

@@ -1,7 +1,9 @@
-<flynt-component client:idle name="NavigationMain">
-  <nav class="navigation" aria-label="{{ labels.ariaLabel|e }}">
-    <div class="container boxed">
-      {% include 'Partials/_logo.twig' with { 'logo': logo, 'site': site } only %}
+<flynt-component client:idle name="NavigationMain" class="hidden md:block relative">
+  <nav class="navigation bg-white w-full z-[99]" aria-label="{{ labels.ariaLabel|e }}">
+    <div class="boxed flex flex-col align-middle justify-center gap-sm h-full mx-auto my-0 pb-0 pt-sm">
+      <a class="logo no-underline flex justify-center shrink-0 h-full" href="{{ site.link }}">
+        <img class="logo-image h-full w-auto" width="142" height="44" src="{{ logo.src }}" alt="{{ logo.alt }}">
+      </a>
       {% if menu %}
         {% include 'Partials/_menu.twig' with { 'items': menu.items } only %}
       {% endif %}

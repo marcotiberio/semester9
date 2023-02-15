@@ -1,5 +1,5 @@
 <flynt-component client:visible name="BlockPostHeader">
-  <div class="container boxed">
+  <div class="boxed">
     {% if post.thumbnail %}
       <div class="featuredImage">
         <img class="figure-image lazyload"
@@ -16,7 +16,7 @@
         data-sizes="auto">
       </div>
       <div class="right">
-        <h1>{{ post.title }}</h1>
+        <div class="h1">{{ post.title }}</div>
         <div>{{ post.artistBio|wpautop }}</div>
       </div>
     </div>

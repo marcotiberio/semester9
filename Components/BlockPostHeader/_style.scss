@@ -1,5 +1,5 @@
 flynt-component[name='BlockPostHeader'] {
-  .container {
+  .wrapper {
     @media (min-width: $breakpoint-tablet) {
       padding: 0 var(--spacingLarge);
     }

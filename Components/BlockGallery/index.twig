@@ -4,7 +4,7 @@
       {{ preContent }}
     </div>
   {% endif %}
-  <div class="container">
+  <div class="wrapper">
     {% for box in boxes %}
       <div class="box" id="box-{{ loop.index }}">
         <div x-data="{ showDropdown: false }" class="box-inner box-inner--image box-front">

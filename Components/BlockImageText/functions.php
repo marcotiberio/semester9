@@ -33,7 +33,10 @@ function getACFLayout()
                 'type' => 'image',
                 'preview_size' => 'medium',
                 'required' => 1,
-                'mime_types' => 'jpg,jpeg,png,svg'
+                'mime_types' => 'jpg,jpeg,png,svg',
+                'wrapper' =>  [
+                    'width' => 50,
+                ],
             ],
             [
                 'label' => __('Content', 'flynt'),
@@ -42,6 +45,9 @@ function getACFLayout()
                 'delay' => 1,
                 'media_upload' => 0,
                 'required' => 1,
+                'wrapper' =>  [
+                    'width' => 50,
+                ],
             ],
             [
                 'label' => __('Options', 'flynt'),

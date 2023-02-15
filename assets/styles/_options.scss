@@ -1,0 +1,9 @@
+flynt-component {
+  [data-image-position='right'] {
+    @apply flex-row-reverse;
+  }
+
+  [data-image-position='left'] {
+    @apply flex-row;
+  }
+}

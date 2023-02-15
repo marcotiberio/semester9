@@ -9,11 +9,9 @@ flynt-component[name='NavigationArtists'] {
 
   .navigation {
     background-color: var(--color-background);
-    // border-bottom: solid 1px var(--color-border);
     height: var(--navigation-height);
     inset-block-start: 0;
     inset-inline: 0;
-    // position: fixed;
     width: 100%;
     z-index: 99;
 
@@ -22,7 +20,7 @@ flynt-component[name='NavigationArtists'] {
     }
   }
 
-  .container {
+  .wrapper {
     align-items: center;
     display: flex;
     flex-flow: column;
@@ -31,6 +29,5 @@ flynt-component[name='NavigationArtists'] {
     justify-content: center;
   }
 
-  @import 'Partials/logo';
   @import 'Partials/menu';
 }

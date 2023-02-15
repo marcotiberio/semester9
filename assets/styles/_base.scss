@@ -77,21 +77,12 @@ h5,
 }
 
 a {
-  color: var(--color-accent);
-  text-underline-offset: 0.25em;
+  color: var(--blue);
 }
 
 hr {
-  border: 0;
+  border: 0.5px solid var(--black);
   margin: 0 auto;
-
-  &::after {
-    background-color: var(--color-text);
-    content: '';
-    display: block;
-    height: 1px;
-    opacity: 1;
-  }
 }
 
 code {
@@ -132,10 +123,10 @@ blockquote,
 * Lists & Tables
 */
 
-ul,
-ol {
-  padding-inline-start: 1.5rem;
-}
+// ul,
+// ol {
+//   padding-inline-start: 1.5rem;
+// }
 
 table {
   border-collapse: collapse;
@@ -379,7 +370,7 @@ flynt-component {
       will-change: transform;
 
       &--unpinned {
-        transform: translateY(-221px);
+        transform: translateY(-241px);
       }
     }
   }
@@ -391,7 +382,7 @@ flynt-component {
   min-height: calc(100vh - 200px);
 
   @media (min-width: $breakpoint-tablet) {
-    margin-top: 126px;
+    margin-top: 146px;
     min-height: calc(100vh - 320px);
   }
 }
@@ -412,7 +403,7 @@ flynt-component {
     min-height: calc(100vh - 200px);
     
     @media (min-width: $breakpoint-tablet) {
-      margin-top: 316px;
+      margin-top: 301px;
       min-height: calc(100vh - 320px);
     }
   }

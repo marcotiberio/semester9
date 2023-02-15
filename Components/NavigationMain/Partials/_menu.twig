@@ -1,9 +1,9 @@
-<ul class="menu">
+<ul class="menu list-none flex align-middle justify-between pb-sm w-full border-b">
   {% for item in items %}
     {# regular menu item #}
     {% if not item.children %}
       <li class="item {{- item.current ? ' current-menu-item' }}">
-        <a class="link text-red-500" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+        <a class="link no-underline text-currentColor font-extrabold inline-block transition-transform duration-200 ease-in-out hover:rotate-[-16deg]" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
           {{ item.title }}
         </a>
       </li>
@@ -11,13 +11,13 @@
     {# menu with submenu item #}
     {% if item.children %}
       <li class="item open-submenu {{- item.current ? ' current-menu-item' }}" >
-        <a class="link" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
+        <a class="link no-underline text-currentColor font-extrabold inline-block transition-transform duration-200 ease-in-out hover:rotate-[-16deg]" href="{{ item.link }}" {{ item.target == '_blank' ? 'target="_blank" rel="noopener noreferrer"' }}>
           {{ item.title }}
         </a>
         <ul class="menu submenu">
           {% for subitem in item.children %}
             <li class="item {{- item.current ? ' current-menu-item' }}">
-              <a class="link" href="{{ subitem.link }}">{{ subitem.title }}</a>
+              <a class="link no-underline text-currentColor font-normal inline-block transition-transform duration-200 ease-in-out hover:rotate-[-16deg]" href="{{ subitem.link }}">{{ subitem.title }}</a>
             </li>
           {% endfor %}
         </ul>
