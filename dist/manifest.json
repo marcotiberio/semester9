@@ -1,0 +1,119 @@
+{
+  "Components/AccordionDefault/script.js": {
+    "file": "assets/script-4ed993c7.js",
+    "isDynamicEntry": true,
+    "src": "Components/AccordionDefault/script.js"
+  },
+  "Components/BlockVideoOembed/script.js": {
+    "file": "assets/script-ecbf5980.js",
+    "imports": [
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/BlockVideoOembed/script.js"
+  },
+  "Components/GridPostsArchive/script.js": {
+    "file": "assets/script-a317b759.js",
+    "imports": [
+      "_index-2a8ce3c2.js",
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/GridPostsArchive/script.js"
+  },
+  "Components/ListComponents/script.js": {
+    "file": "assets/script-6fca4744.js",
+    "imports": [
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/ListComponents/script.js"
+  },
+  "Components/NavigationBurger/script.js": {
+    "file": "assets/script-b002b4e3.js",
+    "imports": [
+      "assets/main.js",
+      "_index-2a8ce3c2.js",
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/NavigationBurger/script.js"
+  },
+  "Components/SliderImages/script.css": {
+    "file": "assets/script-6c3c321b.css",
+    "src": "Components/SliderImages/script.css"
+  },
+  "Components/SliderImages/script.js": {
+    "css": [
+      "assets/script-6c3c321b.css"
+    ],
+    "file": "assets/script-68190f2e.js",
+    "imports": [
+      "_helpers-0bb72b7a.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "Components/SliderImages/script.js"
+  },
+  "_helpers-0bb72b7a.js": {
+    "file": "assets/helpers-0bb72b7a.js"
+  },
+  "_index-2a8ce3c2.js": {
+    "file": "assets/index-2a8ce3c2.js"
+  },
+  "assets/admin.js": {
+    "file": "assets/admin-02f88806.js",
+    "isEntry": true,
+    "src": "assets/admin.js"
+  },
+  "assets/admin.scss": {
+    "file": "assets/admin-bbeb87cf.css",
+    "isEntry": true,
+    "src": "assets/admin.scss"
+  },
+  "assets/fonts/MontserratBold.woff2": {
+    "file": "assets/MontserratBold-9f56e8d4.woff2",
+    "src": "assets/fonts/MontserratBold.woff2"
+  },
+  "assets/fonts/MontserratRegular.woff2": {
+    "file": "assets/MontserratRegular-deb8f7fa.woff2",
+    "src": "assets/fonts/MontserratRegular.woff2"
+  },
+  "assets/images/logo.svg": {
+    "file": "assets/logo-26c0c58f.svg",
+    "src": "assets/images/logo.svg"
+  },
+  "assets/main.js": {
+    "dynamicImports": [
+      "node_modules/@webreflection/custom-elements-builtin/esm/index.js",
+      "Components/AccordionDefault/script.js",
+      "Components/BlockVideoOembed/script.js",
+      "Components/GridPostsArchive/script.js",
+      "Components/ListComponents/script.js",
+      "Components/NavigationBurger/script.js",
+      "Components/SliderImages/script.js"
+    ],
+    "file": "assets/main-1fff9e25.js",
+    "isEntry": true,
+    "src": "assets/main.js"
+  },
+  "assets/main.scss": {
+    "file": "assets/main-abe04823.css",
+    "isEntry": true,
+    "src": "assets/main.scss"
+  },
+  "assets/print.scss": {
+    "file": "assets/print-4b901a72.css",
+    "isEntry": true,
+    "src": "assets/print.scss"
+  },
+  "assets/tinyMce.scss": {
+    "file": "assets/tinyMce-2fe1fd1d.css",
+    "isEntry": true,
+    "src": "assets/tinyMce.scss"
+  },
+  "node_modules/@webreflection/custom-elements-builtin/esm/index.js": {
+    "file": "assets/index-1b2afe3b.js",
+    "isDynamicEntry": true,
+    "src": "node_modules/@webreflection/custom-elements-builtin/esm/index.js"
+  }
+}

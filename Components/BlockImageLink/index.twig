@@ -1,5 +1,5 @@
 <flynt-component client:visible name="BlockImageLink">
-  <flynt-component class="wrapper boxed">
+  <flynt-component class="listing boxed">
     {% for box in boxes %}
         <a href="{{ box.blockLink }}" class="box" id="box-{{ loop.index }}">
           <img class="figure-image lazyload"
