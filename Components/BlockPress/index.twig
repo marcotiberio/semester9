@@ -1,0 +1,10 @@
+<flynt-component client:visible name="BlockPress">
+  <div class="boxed flex flex-col gap-sm mx-auto">
+    {% for column in columnTexts %}
+      <a href="{{ column.articleLink }}" target="_blank" class="text-black border-b last:border-b-0 pb-sm">
+        <div class="font-bold">{{ column.articleTitle }}</div>
+        <div>{{ column.articleDescription }}</div>
+      </a>
+    {% endfor %}
+  </div>
+</flynt-component>

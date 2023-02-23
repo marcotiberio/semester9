@@ -1,4 +1,5 @@
-flynt-component[name='BlockAnnouncement'] {  
+flynt-component[name='BlockAnnouncement'] {
+  display: none;
   padding: 0;
 
   @media (max-width: $breakpoint-tablet) {
@@ -18,7 +19,7 @@ flynt-component[name='BlockAnnouncement'] {
     position: fixed;
     right: 0;
     text-align: center;
-    top: 200px;
+    top: 160px;
     transform: translateX(-20px) rotate(10deg);
     transition: all 0.2s ease-in-out;
     width: 240px;
@@ -34,6 +35,7 @@ flynt-component[name='BlockAnnouncement'] {
       font-family: 'PPRight Grotesk Bold', sans-serif;
       font-size: 700;
       line-height: 1.2;
+      margin-bottom: 0;
       text-decoration: none;
       text-transform: uppercase;
     }

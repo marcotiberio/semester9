@@ -34,6 +34,11 @@ flynt-component[name='BlockPostHeader'] {
       @media (min-width: $breakpoint-tablet) {
         width: calc(33% - var(--spacingLarge));
       }
+
+      img {
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
     }
 
     .right {

@@ -17,10 +17,15 @@ html {
 }
 
 body,
-.paragraph {
+.paragraph
+p {
   color: var(--color-text);
   font-family: 'Montserrat', Verdana, sans-serif; // FOUC can be reduced with good matching fallback font: https://meowni.ca/font-style-matcher/
-  font-size: var(--bodyFontSize);
+  font-size: var(--bodyFontSizeSmall);
+
+  @media (min-width: $breakpoint-tablet + 1) {
+    font-size: var(--bodyFontSize);
+  }
 }
 
 #{$heading-selectors} {
@@ -33,6 +38,7 @@ h1,
 .h1 {
   font-size: 2.25rem;
   font-weight: 700;
+  margin-bottom: 1rem;
 
   @media (min-width: $breakpoint-mobile) {
     font-size: 2.5rem;
@@ -43,6 +49,7 @@ h2,
 .h2 {
   font-size: 1.325rem;
   font-weight: 700;
+  margin-bottom: 1rem;
 
   @media (min-width: $breakpoint-mobile) {
     font-size: 1.625rem;
@@ -51,16 +58,19 @@ h2,
 
 h3,
 .h3 {
-  font-size: 1.9375rem;
+  font-size: 1.225rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 
   @media (min-width: $breakpoint-mobile) {
-    font-size: 2.1875rem;
+    font-size: 1.4rem;
   }
 }
 
 h4,
 .h4 {
   font-size: 1.625rem;
+  margin-bottom: 1rem;
 
   @media (min-width: $breakpoint-mobile) {
     font-size: 1.825rem;
@@ -70,6 +80,7 @@ h4,
 h5,
 .h5 {
   font-size: 1.375rem;
+  margin-bottom: 1rem;
 
   @media (min-width: $breakpoint-mobile) {
     font-size: 1.5rem;
@@ -260,15 +271,16 @@ label {
 #{$input-selectors} {
   appearance: none;
   background-color: transparent;
-  border: 2px solid var(--color-border-secondary);
+  border-bottom: 1px solid var(--black);
   border-radius: 0;
   caret-color: var(--color-text);
   color: var(--color-text);
   font-size: var(--bodyFontSizeSmall);
+  margin-bottom: 35px;
   max-width: 100%;
   padding: 0.7rem 0.6rem;
   transition: border-color 0.3s ease-in-out;
-  width: 300px;
+  width: 100%;
 
   &::placeholder {
     color: var(--color-border-secondary);
@@ -311,6 +323,8 @@ label {
 }
 
 textarea {
+  border: 1px solid var(--black);
+  max-width: 100%;
   min-height: 150px;
   resize: vertical;
   vertical-align: top;
@@ -370,7 +384,34 @@ flynt-component {
       will-change: transform;
 
       &--unpinned {
-        transform: translateY(-241px);
+        transform: translateY(-242px);
+      }
+    }
+  }
+}
+
+.single-post {
+  .mainHeader {
+    &-desktop {
+      &.headroom {
+        &--unpinned {
+          transform: translateY(-242px);
+        }
+      }
+    }
+  }
+}
+
+.page-events,
+.page-current,
+.page-upcoming,
+.page-past {
+  .mainHeader {
+    &-desktop {
+      &.headroom {
+        &--unpinned {
+          transform: translateY(-147px);
+        }
       }
     }
   }
@@ -392,7 +433,21 @@ flynt-component {
     min-height: calc(100vh - 200px);
 
     @media (min-width: $breakpoint-tablet) {
-      margin-top: 216px;
+      margin-top: 240px;
+      min-height: calc(100vh - 320px);
+    }
+  }
+}
+
+.page-events,
+.page-current,
+.page-upcoming,
+.page-past {
+  .mainContent {
+    min-height: calc(100vh - 200px);
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-top: 240px;
       min-height: calc(100vh - 320px);
     }
   }

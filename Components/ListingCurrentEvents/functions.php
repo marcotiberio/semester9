@@ -1,6 +1,6 @@
 <?php
 
-namespace Flynt\Components\ListingUpcomingEvents;
+namespace Flynt\Components\ListingCurrentEvents;
 
 use Flynt\FieldVariables;
 use Flynt\Utils\Options;
@@ -8,7 +8,7 @@ use Timber\Timber;
 
 const POST_TYPE = 'event';
 
-add_filter('Flynt/addComponentData?name=ListingUpcomingEvents', function ($data) {
+add_filter('Flynt/addComponentData?name=ListingCurrentEvents', function ($data) {
     $postType = POST_TYPE;
 
     $data['taxonomies'] = $data['taxonomies'] ?: [];
@@ -23,13 +23,19 @@ add_filter('Flynt/addComponentData?name=ListingUpcomingEvents', function ($data)
         }, $data['taxonomies'])),
         'ignore_sticky_posts' => 1,
         'posts_per_page' => -1,
-        'meta_key' => 'eventDate',
         'orderby' => 'meta_value',
+        'meta_key' => 'eventDate',
         'order' => 'DESC',
         'meta_query' => array(
+            'relation'    => 'AND',
+            array(
+                'key' => 'eventDateEnd',
+                'compare' => '>=',
+                'value' => $today,
+            ),
             array(
                 'key' => 'eventDate',
-                'compare' => '>=',
+                'compare' => '<=',
                 'value' => $today,
             ),
         ),
@@ -43,8 +49,8 @@ add_filter('Flynt/addComponentData?name=ListingUpcomingEvents', function ($data)
 function getACFLayout()
 {
     return [
-        'name' => 'ListingUpcomingEvents',
-        'label' => __('Listing: Upcoming Events', 'flynt'),
+        'name' => 'ListingCurrentEvents',
+        'label' => __('Listing: Current Events', 'flynt'),
         'sub_fields' => [
             [
                 'label' => __('General', 'flynt'),
@@ -63,7 +69,7 @@ function getACFLayout()
     ];
 }
 
-Options::addTranslatable('ListingUpcomingEvents', [
+Options::addTranslatable('ListingCurrentEvents', [
     [
         'label' => __('Labels', 'flynt'),
         'name' => 'labelsTab',

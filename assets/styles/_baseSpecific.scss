@@ -1,4 +1,7 @@
-.page-agenda {
+.page-events,
+.page-current,
+.page-upcoming,
+.page-past {
   @media (min-width: $breakpoint-tablet) {
     flynt-component[name='NavigationAgenda'] {
       display: block;
@@ -40,5 +43,15 @@
     flynt-component[name='ListingEvents'] {
       scroll-margin-top: 96px;
     }
+  }
+}
+
+.home,
+.page-events,
+.page-current,
+.page-upcoming,
+.page-past {
+  .blockAnnouncement {
+    display: block;
   }
 }

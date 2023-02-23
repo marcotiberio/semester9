@@ -10,10 +10,9 @@ add_filter('Flynt/addComponentData?name=ListingHomepage', function ($data) {
     $data['posts'] = Timber::get_posts([
         'post_status' => 'publish',
         'post_type' => array('post','page'),
-        // 'ignore_sticky_posts' => 1,
-        'posts_per_page' => 8,
+        'posts_per_page' => 9,
         'orderby' => 'rand',
-        'post__not_in' => array(20,18,16,26,28,3,24),
+        'post__not_in' => array(20,18,16,26,28,3,24,258,254,182,184),
     ]);
 
     $data['postTypeArchiveLink'] = get_post_type_archive_link($postType);
@@ -39,7 +38,7 @@ function getACFLayout()
                 'instructions' => __('Want to add a headline? And a paragraph? Go ahead! Or just leave it empty and nothing will be shown.', 'flynt'),
                 'name' => 'preContentHtml',
                 'type' => 'wysiwyg',
-                'tabs' => 'visual,text',
+                'tabs' => 'visual',
                 'media_upload' => 0,
                 'delay' => 1,
             ]

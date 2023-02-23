@@ -12,22 +12,33 @@ add_action('Flynt/afterRegisterComponents', function () {
         'position' => 'acf_after_title',
         'fields' => [
             [
-                'label' => __('Date', 'flynt'),
+                'label' => __('Date Start', 'flynt'),
                 'name' => 'eventDate',
                 'type' => 'date_picker',
                 'first_day' => 1,
                 'wrapper' => [
-                    'width' => '50',
+                    'width' => '33',
                 ],
                 'display_format' => 'd.m.Y',
                 'return_format' => 'd.m.Y'
             ],
             [
-                'label' => __('Time', 'flynt'),
+                'label' => __('Date End (optional)', 'flynt'),
+                'name' => 'eventDateEnd',
+                'type' => 'date_picker',
+                'first_day' => 1,
+                'wrapper' => [
+                    'width' => '33',
+                ],
+                'display_format' => 'd.m.Y',
+                'return_format' => 'd.m.Y'
+            ],
+            [
+                'label' => __('Time (optional)', 'flynt'),
                 'name' => 'eventTime',
                 'type' => 'time_picker',
                 'wrapper' => [
-                    'width' => '50',
+                    'width' => '33',
                 ],
                 'display_format' => 'g:i A',
                 'return_format' => 'g:i A'
@@ -65,7 +76,10 @@ add_action('Flynt/afterRegisterComponents', function () {
                 'type' => 'flexible_content',
                 'button_label' => __('Add Component', 'flynt'),
                 'layouts' => [
-                    Components\BlockWysiwyg\getACFLayout()
+                    Components\BlockDivider\getACFLayout(),
+                    Components\BlockEventDescription\getACFLayout(),
+                    Components\BlockGallery\getACFLayout(),
+                    Components\BlockVideoOembed\getACFLayout()
                 ],
             ],
         ],

@@ -1,15 +1,15 @@
 <flynt-component client:visible name="BlockImageText">
   <div class="wrapper boxed lg:flex lg:align-start lg:justify-between lg:gap-lg" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
-    <figure class="figure centerContentMaxWidth">
+    <div class="lg:w-1/2">
       {% if image.post_mime_type == 'image/svg+xml'%}
-        <img class="image lazyload grow"
+        <img class="image lazyload"
           src="{{ placeholderImage(768, (768 / image.aspect)|round, 'rgba(125, 125, 125, 0.1)') }}"
           width="{{ 768 }}"
           height="{{ (768 / image.aspect)|round }}"
           data-src="{{ image.src }}"
           alt="{{ image.alt|e }}">
       {% else %}
-        <img class="figure-image lazyload grow"
+        <img class="figure-image lazyload"
           src="{{ image.src|resizeDynamic(768) }}"
           width="{{ 768 }}"
           height="{{ (768 / image.aspect)|round }}"
@@ -28,8 +28,8 @@
       {% if image.caption %}
         <figcaption>{{ image.caption|e }}</figcaption>
       {% endif %}
-    </figure>
-    <div class="centerContentMaxWidth grow">
+    </div>
+    <div class="lg:w-1/2">
       {{ contentHtml|e('wp_kses_post') }}
     </div>
   </div>

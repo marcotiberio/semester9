@@ -1,8 +1,8 @@
 {% if blockAnnouncementIsEnabled %}
-<flynt-component client:visible name="BlockAnnouncement" class="flyntComponent flyntComponent--announcement">
+<flynt-component client:visible name="BlockAnnouncement" class="blockAnnouncement">
   {% if ctaLink.url %}
   <div class="wrapper">
-      <a class="cta h2" href="{{ ctaLink.url }}"{% if ctaLink.target %} target="{{ ctaLink.target }}" rel="noreferrer noopener"{% endif %}>
+      <a class="cta h3" href="{{ ctaLink.url }}"{% if ctaLink.target %} target="{{ ctaLink.target }}" rel="noreferrer noopener"{% endif %}>
         {{ ctaLink.title|e }}
       <div>{{ readMoreLabel }}</div>
       </a>

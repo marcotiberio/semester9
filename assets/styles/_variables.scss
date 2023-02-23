@@ -33,7 +33,7 @@ $input-selectors: '[type="tel"], [type="url"], [type="text"], [type="date"], [ty
 
 :root {
   --bodyFontSize: 1rem; // Always use rem. 1rem = 16px
-  --bodyFontSizeSmall: 1rem;
+  --bodyFontSizeSmall: 0.875rem;
   --flow-space: 1.5625rem;
 
   --contentMaxWidth: 1000px;

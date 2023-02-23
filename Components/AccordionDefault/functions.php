@@ -39,7 +39,7 @@ function getACFLayout()
                         'label' => __('Panel Content', 'flynt'),
                         'name' => 'panelContent',
                         'type' => 'wysiwyg',
-                        'tabs' => 'visual,text',
+                        'tabs' => 'visual',
                         'media_upload' => 0,
                         'delay' => 1,
                     ],

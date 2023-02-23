@@ -20,10 +20,13 @@
             {% endif %}
             <div class="content">
               <h2 class="h5">{{ post.title }}</h2>
-              {% if post.eventDate or post.eventTime %}
-                <span>{{ post.eventDate|date("d.m.Y")|escape('wp_kses_post') }}</span>
-                <span> - {{ post.eventTime }}</span>
-              {% endif %}
+              <div class="flex justify-between align-middle">
+                <div>
+                  {% if post.eventDate %}<span>{{ post.eventDate|date("d.m.Y")|escape('wp_kses_post') }}</span>{% endif %}
+                  {% if post.eventDateEnd %}<span> - {{ post.eventDateEnd|date("d.m.Y")|escape('wp_kses_post') }}</span>{% endif %}
+                </div>
+                {% if post.eventTime %}<span>{{ post.eventTime }}</span>{% endif %}
+              </div>
               <p>{{ post.eventIntro }}</p>
               <a class="button button--full" href="{{ post.link }}" aria-label="{{ post.title }}">Read more</a>
             </div>
