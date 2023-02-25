@@ -17,15 +17,6 @@ function getACFLayout()
                 'placement' => 'top',
                 'endpoint' => 0,
             ],
-            // [
-            //     'label' => __('Text Align', 'flynt'),
-            //     'name' => 'textAlign',
-            //     'type' => 'button_group',
-            //     'choices' => [
-            //         'left' => sprintf('<i class="dashicons dashicons-editor-alignleft" title="%1$s"></i>', __('Align text left', 'flynt')),
-            //         'center' => sprintf('<i class="dashicons dashicons-editor-aligncenter" title="%1$s"></i>', __('Align text center', 'flynt'))
-            //     ]
-            // ],
             [
                 'label' => __('Content', 'flynt'),
                 'name' => 'contentHtml',
@@ -41,31 +32,6 @@ function getACFLayout()
                 'placement' => 'top',
                 'endpoint' => 0
             ],
-            [
-                'label' => '',
-                'name' => 'options',
-                'type' => 'group',
-                'layout' => 'row',
-                'sub_fields' => [
-                    [
-                        'label' => __('Max Width', 'flynt'),
-                        'name' => 'maxWidth',
-                        'type' => 'radio',
-                        'other_choice' => 0,
-                        'save_other_choice' => 0,
-                        'layout' => 'horizontal',
-                        'choices' => [
-                            '' => __('Default', 'flynt'),
-                            'large' => __('Large', 'flynt)'),
-                            'full' => __('Full', 'flynt)'),
-                        ],
-                        'default_value' => 'full',
-                        'wrapper' =>  [
-                            'width' => '100',
-                        ],
-                    ],
-                ]
-            ]
         ]
     ];
 }

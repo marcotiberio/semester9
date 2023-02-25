@@ -156,8 +156,12 @@ function getConfig()
                     'styleselect',
                     'bold',
                     'italic',
-                    'strikethrough',
                     'blockquote',
+                    '|',
+                    'alignleft',
+                    'aligncenter',
+                    'alignright',
+                    'alignjustify',
                     '|',
                     'bullist',
                     'numlist',
@@ -165,26 +169,29 @@ function getConfig()
                     'link',
                     'unlink',
                     '|',
-                    'pastetext',
-                    'removeformat',
-                    '|',
-                    'undo',
-                    'redo',
-                    'fullscreen'
+                    'removeformat'
                 ]
             ],
             'basic' => [
                 [
+                    'formatselect',
+                    'styleselect',
                     'bold',
                     'italic',
-                    'strikethrough',
+                    'blockquote',
+                    '|',
+                    'alignleft',
+                    'aligncenter',
+                    'alignright',
+                    'alignjustify',
+                    '|',
+                    'bullist',
+                    'numlist',
                     '|',
                     'link',
                     'unlink',
                     '|',
-                    'undo',
-                    'redo',
-                    'fullscreen'
+                    'removeformat'
                 ]
             ]
         ]

@@ -15,7 +15,7 @@ add_filter('Flynt/addComponentData?name=ListingHomepage', function ($data) {
         'post__not_in' => array(20,18,16,26,28,3,24,258,254,182,184),
     ]);
 
-    $data['postTypeArchiveLink'] = get_post_type_archive_link($postType);
+    // $data['postTypeArchiveLink'] = get_post_type_archive_link($postType);
 
     return $data;
 });

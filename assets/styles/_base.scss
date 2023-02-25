@@ -390,77 +390,12 @@ flynt-component {
   }
 }
 
-.single-post {
-  .mainHeader {
-    &-desktop {
-      &.headroom {
-        &--unpinned {
-          transform: translateY(-242px);
-        }
-      }
-    }
-  }
-}
-
-.page-events,
-.page-current,
-.page-upcoming,
-.page-past {
-  .mainHeader {
-    &-desktop {
-      &.headroom {
-        &--unpinned {
-          transform: translateY(-147px);
-        }
-      }
-    }
-  }
-}
-
-
-
 .mainContent {
   min-height: calc(100vh - 200px);
 
   @media (min-width: $breakpoint-tablet) {
     margin-top: 146px;
     min-height: calc(100vh - 320px);
-  }
-}
-
-.page-artists {
-  .mainContent {
-    min-height: calc(100vh - 200px);
-
-    @media (min-width: $breakpoint-tablet) {
-      margin-top: 240px;
-      min-height: calc(100vh - 320px);
-    }
-  }
-}
-
-.page-events,
-.page-current,
-.page-upcoming,
-.page-past {
-  .mainContent {
-    min-height: calc(100vh - 200px);
-
-    @media (min-width: $breakpoint-tablet) {
-      margin-top: 240px;
-      min-height: calc(100vh - 320px);
-    }
-  }
-}
-
-.single-post {
-  .mainContent {
-    min-height: calc(100vh - 200px);
-    
-    @media (min-width: $breakpoint-tablet) {
-      margin-top: 301px;
-      min-height: calc(100vh - 320px);
-    }
   }
 }
 

@@ -1,5 +1,5 @@
 <flynt-component client:visible name="BlockImageText">
-  <div class="wrapper boxed lg:flex lg:align-start lg:justify-between lg:gap-lg" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
+  <div class="wrapper boxed lg:flex lg:align-start lg:justify-between lg:gap-[100px]" {{ imagePosition ? 'data-image-position="' ~ imagePosition ~ '"' }}>
     <div class="lg:w-1/2">
       {% if image.post_mime_type == 'image/svg+xml'%}
         <img class="image lazyload"

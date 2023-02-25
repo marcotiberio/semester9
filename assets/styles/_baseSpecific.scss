@@ -1,3 +1,5 @@
+/* Page Events */
+
 .page-events,
 .page-current,
 .page-upcoming,
@@ -7,12 +9,41 @@
       display: block;
     }
   }
+
+  .blockAnnouncement {
+    display: block;
+  }
+
+  .mainHeader {
+    &-desktop {
+      &.headroom {
+        &--unpinned {
+          transform: translateY(-147px);
+        }
+      }
+    }
+  }
+
+  .mainContent {
+    min-height: calc(100vh - 200px);
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-top: 240px;
+      min-height: calc(100vh - 320px);
+    }
+  }
 }
+
+/* Page Artists */
 
 .page-artists {
   @media (min-width: $breakpoint-tablet) {
     flynt-component[name='NavigationArtists'] {
       display: block;
+
+      .boxed {
+        padding-bottom: 0;
+      }
 
       .wrapper {
         padding-bottom: 0;
@@ -28,7 +59,28 @@
       display: none;
     }
   }
+
+  .mainHeader {
+    &-desktop {
+      &.headroom {
+        &--unpinned {
+          transform: translateY(-147px);
+        }
+      }
+    }
+  }
+
+  .mainContent {
+    min-height: calc(100vh - 200px);
+
+    @media (min-width: $breakpoint-tablet) {
+      margin-top: 240px;
+      min-height: calc(100vh - 320px);
+    }
+  }
 }
+
+/* Post Artist */
 
 .single-post {
   @media (min-width: $breakpoint-tablet) {
@@ -44,14 +96,23 @@
       scroll-margin-top: 96px;
     }
   }
-}
 
-.home,
-.page-events,
-.page-current,
-.page-upcoming,
-.page-past {
-  .blockAnnouncement {
-    display: block;
+  .mainHeader {
+    &-desktop {
+      &.headroom {
+        &--unpinned {
+          transform: translateY(-242px);
+        }
+      }
+    }
+  }
+
+  .mainContent {
+    min-height: calc(100vh - 200px);
+    
+    @media (min-width: $breakpoint-tablet) {
+      margin-top: 295px;
+      min-height: calc(100vh - 320px);
+    }
   }
 }
